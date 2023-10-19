@@ -1,0 +1,12 @@
+@       IN      SOA     25.168.192.in-addr.arpa.   root.25.168.192.in-addr.arpa (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+
+
+2.25.168.192.in-addr.arpa    IN         PTR         com.
+3.25.168.192.in-addr.arpa   IN          PTR         compressibleflowcalculator.com.
+
