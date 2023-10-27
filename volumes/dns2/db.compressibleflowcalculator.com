@@ -8,7 +8,7 @@
 
 
 @           IN      NS    ns1.compressibleflowcalculator.com.
-ns1         IN      A      172.25.0.2
+ns1         IN      A      172.25.0.3
 
 
 

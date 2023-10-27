@@ -2,12 +2,12 @@ FROM ubuntu/bind9 as starter
 COPY dns_child_server/append_zones.sh .
 RUN chmod +x ./append_zones.sh
 RUN ./append_zones.sh
+
 COPY volumes/dns2/db.compressibleflowcalculator.com /etc/bind/db.compressibleflowcalculator.com
 COPY dns_child_server/add_dns_options.sh .
 RUN chmod +x ./add_dns_options.sh
 RUN ./add_dns_options.sh
-COPY dig /usr/bin/dig
-COPY dns_child_server/haveged /usr/sbin/haveged
+
 WORKDIR /etc/bind/keys/compressibleflowcalculator.com
 RUN dnssec-keygen -a RSASHA256 -b 1024 compressibleflowcalculator.com
 RUN dnssec-keygen -a RSASHA256 -b 2048 -f KSK compressibleflowcalculator.com
@@ -17,6 +17,7 @@ RUN chmod 777 .
 RUN chmod -R 777 .
 RUN chown bind -R /etc/bind
 RUN chgrp bind -R /etc/bind
+
 #RUN dnssec-keygen -a NSEC3RSASHA1 -b 2048 -n ZONE compressibleflowcalculator.com
 # RUN dnssec-keygen -f KSK -a NSEC3RSASHA1 -b 4096 -n ZONE compressibleflowcalculator.com
 #dnssec-dsfromkey -a SHA-1 Kexample.com.+008+06817.key

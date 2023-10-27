@@ -1,4 +1,4 @@
-@       IN      SOA     com.   root.com. (
+@       IN      SOA     com   root.com (
                               1         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
@@ -7,9 +7,9 @@
 ;
 
 
-.com                IN              NS  root.com 
-root.com            IN              A   192.168.25.2 
+@                   IN        NS      root.com 
+root                IN        A       172.25.0.2
 
-compressibleflowcalculator.com       IN      NS      ns1.compressibleflowcalculator.com 
-ns1.compressibleflowcalculator.com       IN     NS      192.168.25.3 
 
+compressibleflowcalculator.com       IN      NS      ns1.compressibleflowcalculator.com
+ns1.compressibleflowcalculator.com       IN     NS      172.25.0.3
