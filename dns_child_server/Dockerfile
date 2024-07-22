@@ -12,8 +12,13 @@ RUN ./add_dns_options.sh
 COPY volumes/dns2/db.0.25.172.in-addr.arpa /etc/bind/db.0.25.172.in-addr.arpa
 
 WORKDIR /etc/bind/keys/compressibleflowcalculator.com
+#RUN dnssec-keygen -a RSASHA256 -b 2048 -f KSK compressibleflowcalculator.com
+RUN dnssec-keygen -a RSASHA256 -b 2048 -f KSK compressibleflowcalculator.com && \
+    for key in Kcompressibleflowcalculator.com.+008+*.key; do \
+    dnssec-dsfromkey -a SHA-256 "$key" > "${key}.ds"; \
+    cat "${key}.ds"; \
+    done
 RUN dnssec-keygen -a RSASHA256 -b 1024 compressibleflowcalculator.com
-RUN dnssec-keygen -a RSASHA256 -b 2048 -f KSK compressibleflowcalculator.com
 RUN chown bind -R .
 RUN chgrp bind -R .
 RUN chmod 777 .
@@ -22,9 +27,9 @@ RUN chown bind -R /etc/bind
 RUN chgrp bind -R /etc/bind
 
 #RUN dnssec-keygen -a NSEC3RSASHA1 -b 2048 -n ZONE compressibleflowcalculator.com
-# RUN dnssec-keygen -f KSK -a NSEC3RSASHA1 -b 4096 -n ZONE compressibleflowcalculator.com
-#dnssec-dsfromkey -a SHA-1 Kexample.com.+008+06817.key
-#dnssec-dsfromkey -a SHA-256 Kexample.com.+008+06817.key
+#RUN dnssec-keygen -f KSK -a NSEC3RSASHA1 -b 4096 -n ZONE compressibleflowcalculator.com
+#RUN dnssec-dsfromkey -a SHA-1 Kexample.com.+008+06817.key
+#RUN dnssec-dsfromkey -a SHA-256 Kexample.com.+008+06817.key
 #COPY dns_child_server/add_dnskeys.sh /add_dnskeys.sh
 #RUN chmod +x /add_dnskeys.sh
 #RUN /add_dnskeys.sh

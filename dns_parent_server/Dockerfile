@@ -12,4 +12,4 @@ WORKDIR /etc/bind
 RUN chown bind -R .
 RUN chgrp bind -R .
 COPY volumes/dns1/db.com /etc/bind/db.com
-COPY volumes/dns1/db.compressibleflowcalculator.com /etc/bind/db.compressibleflowcalculator.com
+#COPY volumes/dns1/db.compressibleflowcalculator.com /etc/bind/db.compressibleflowcalculator.com

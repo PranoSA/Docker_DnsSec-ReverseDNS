@@ -1,9 +1,9 @@
 #!/bin/bash
 
 cat <<EOF >>/etc/bind/named.conf.default-zones
-zone "compressibleflowcalculator.com" {
+zone "com" {
 	type master;
-	file "/etc/bind/db.compressibleflowcalculator.com";
+	file "/etc/bind/db.com";
 };
 EOF
 
