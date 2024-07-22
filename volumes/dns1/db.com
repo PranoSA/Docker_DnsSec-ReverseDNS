@@ -15,5 +15,7 @@ marley              IN        A       172.25.0.11
 compressibleflowcalculator.com.       IN      NS      ns1.compressibleflowcalculator.com.
 ns1.compressibleflowcalculator.com.       IN     A      172.25.0.3
 
+compressibleflowcalculator.com. IN DS 50762 8 2 555A450D6A9A3E6B73DFBC4029F371CEDB8549D5CEACC71ED36C358484627F48
+
 
 
