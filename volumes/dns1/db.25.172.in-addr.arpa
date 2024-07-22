@@ -1,0 +1,13 @@
+@       IN      SOA     25.172.in-addr.arpa.   root.25.172.in-addr.arpa. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+
+@       IN          NS        root.25.172.in-addr.arpa.
+root    IN          A         17.25.0.2
+
+0.25.172.in-addr.arpa     IN              NS          ns1.compressibleflowcalculator.com 
+ns1.compressibleflowcalculator.com       IN     A      172.25.0.3

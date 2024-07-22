@@ -8,6 +8,9 @@ COPY dns_child_server/add_dns_options.sh .
 RUN chmod +x ./add_dns_options.sh
 RUN ./add_dns_options.sh
 
+# Reverse DNS now 
+COPY volumes/dns2/db.0.25.172.in-addr.arpa /etc/bind/db.0.25.172.in-addr.arpa
+
 WORKDIR /etc/bind/keys/compressibleflowcalculator.com
 RUN dnssec-keygen -a RSASHA256 -b 1024 compressibleflowcalculator.com
 RUN dnssec-keygen -a RSASHA256 -b 2048 -f KSK compressibleflowcalculator.com

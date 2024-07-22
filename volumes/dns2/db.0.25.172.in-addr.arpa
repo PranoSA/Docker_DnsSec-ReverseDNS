@@ -1,4 +1,4 @@
-@       IN      SOA     25.168.192.in-addr.arpa.   root.25.168.192.in-addr.arpa (
+@       IN      SOA     0.25.172.in-addr.arpa.   root.0.25.172.in-addr.arpa. (
                               1         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
@@ -6,7 +6,9 @@
                          604800 )       ; Negative Cache TTL
 ;
 
+@       IN          NS        ns1.0.25.172.in-addr.arpa.
+ns1     IN          A         17.25.0.3
 
-2.25.168.192.in-addr.arpa    IN         PTR         com.
-3.25.168.192.in-addr.arpa   IN          PTR         compressibleflowcalculator.com.
-
+2.0.25.172.in-addr.arpa.    IN         PTR         com.
+3.0.25.172.in-addr.arpa.   IN          PTR         compressibleflowcalculator.com.
+7.0.25.172.in-addr.arpa.   IN          PTR         ldap.compressibleflowcalculator.com.
