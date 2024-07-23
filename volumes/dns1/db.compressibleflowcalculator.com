@@ -1,4 +1,4 @@
-@       IN      SOA     compressibleflowcalculator.com   ns1.compressibleflowcalculator.com. (
+@       IN      SOA     compressibleflowcalculator.com.   ns1.compressibleflowcalculator.com. (
                               1         ; Serial
                          604800         ; Refresh
                           86400         ; Retry

@@ -1,4 +1,4 @@
-@       IN      SOA     com   ns1.com (
+@       IN      SOA     com.   ns1.com. (
                               1         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
@@ -15,7 +15,7 @@ marley              IN        A       172.25.0.11
 compressibleflowcalculator.com.       IN      NS      ns1.compressibleflowcalculator.com.
 ns1.compressibleflowcalculator.com.       IN     A      172.25.0.3
 
-compressibleflowcalculator.com. IN DS 50762 8 2 555A450D6A9A3E6B73DFBC4029F371CEDB8549D5CEACC71ED36C358484627F48
-
+;compressibleflowcalculator.com. IN DS 50762 8 2 555A450D6A9A3E6B73DFBC4029F371CEDB8549D5CEACC71ED36C358484627F48
+compressibleflowcalculator.com. IN DS 34501 8 2 38C750063E3C3D7AA0CD98D41F309A0BDF610238FF921E11D2D4E80760F9622A
 
 
